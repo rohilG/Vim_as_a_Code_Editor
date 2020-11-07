@@ -16,6 +16,7 @@ Plug 'itchyny/lightline.vim'
 
 "NERDTree
 Plug 'scrooloose/nerdtree'
+" Switch between panes with Ctrl + ww
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
@@ -28,12 +29,9 @@ let g:gitgutter_max_signs = 2000
 "Git wrapper
 Plug 'tpope/vim-fugitive'
 
-"Paste easy with (set number)
-Plug 'roxma/vim-paste-easy'
-
 " Ale
-let g:ale_completion_enabled = 1
 Plug 'w0rp/ale'
+let g:ale_completion_enabled = 1
 let g:ale_fixers = ['eslint'] 
 set omnifunc=ale#completion#OmniFunc
 let g:ale_sign_column_always = 1
@@ -67,7 +65,7 @@ let g:lightline.component_type = {
 let g:lightline.active = { 'right': [[ 'linter_checking', 'linter_errors', 'linter_warnings', 'linter_ok' ]] }
 
 " Conquest of Completion
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
+" Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 " One Dark Colorscheme
 Plug 'joshdick/onedark.vim'
@@ -79,19 +77,44 @@ Plug 'pangloss/vim-javascript'
 " Auto-pair brackets/quotes/etc
 Plug 'jiangmiao/auto-pairs'
 
-" Initialize plugin system
+" ReactJSX Highlighting
+Plug 'mxw/vim-jsx'
+
+" YouCompleteMe - Autocompletion"
+Plug 'Valloric/YouCompleteMe'
+
+" Easy copy-pasting in vim
+Plug 'roxma/vim-paste-easy'
+
+"Initialize plugin system
 call plug#end()
 
+" cool syntax highlighting 
 syntax on
 colorscheme onedark
+
+" i forget what this does but i dont want to remove it 
 set laststatus=2
 set noshowmode
+
+" shows line #numbers on left
 set number
 
+" idk
+set mouse=a
 filetype plugin indent on
+
 " show existing tab with 4 spaces width
 set tabstop=4
+
 " when indenting with '>', use 4 spaces width
 set shiftwidth=4
+
 " On pressing tab, insert 4 spaces
 set expandtab
+
+" Be sure to also remove annoying ding audio bell at every mistake you make in your terminal settings 
+set visualbell
+
+" Allows backspace in insert mode
+set backspace=indent,eol,start
