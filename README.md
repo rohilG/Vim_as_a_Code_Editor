@@ -1,2 +1,2 @@
 # Vim_as_a_Code_Editor
-Personal vim configs
+who says vim can't be an IDE
