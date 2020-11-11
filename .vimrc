@@ -64,15 +64,14 @@ let g:lightline.component_type = {
 
 let g:lightline.active = { 'right': [[ 'linter_checking', 'linter_errors', 'linter_warnings', 'linter_ok' ]] }
 
-" Conquest of Completion
-" Plug 'neoclide/coc.nvim', {'branch': 'release'}
-
 " One Dark Colorscheme
 Plug 'joshdick/onedark.vim'
 let g:onedark_hide_endofbuffer = 1
 
 " Syntax highlighting for JS
 Plug 'pangloss/vim-javascript'
+" Allows one to select from list with enter key
+let g:ycm_key_list_stop_completion = [ '<C-y>', '<Enter>' ]
 
 " Auto-pair brackets/quotes/etc
 Plug 'jiangmiao/auto-pairs'
