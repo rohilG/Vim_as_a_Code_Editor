@@ -1,2 +1,6 @@
 # Vim_as_a_Code_Editor
-who says vim can't be an IDE
+Reminders:
+
+``ctrl-ww``: switch panes
+``'.``: go back to previous location
+``gd``: go to definition
